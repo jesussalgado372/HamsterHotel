@@ -13,33 +13,92 @@
     <link rel="stylesheet" href="/styles/styles.css" />
   </head>
   <body>
-
-
-    
-    <nav class="navbar navbar-expand-lg bg-body-tertiary nav-pills justify-content-center">
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #000324;">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="d-flex justify-content-center align-items-end w-100">
-        <div class="navbar-nav d-flex gap-3">
-          <a class="nav-link" href="#">Overview</a>
-          <a class="nav-link" href="#">Rooms</a>
-          <a class="nav-link" href="#">Packages</a>
+    <!-- NavBar with Logo -->
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary nav-pills justify-content-center"
+    >
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary"
+        style="background-color: #000324"
+      >
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="d-flex justify-content-center align-items-end w-100">
+              <div class="navbar-nav d-flex gap-3">
+                <a class="nav-link" href="#">Overview</a>
+                <a class="nav-link" href="#">Rooms</a>
+                <a class="nav-link" href="#">Packages</a>
+              </div>
+              <a class="navbar-brand mx-4" href="#">
+                <img
+                  src="/assets/Logo.png"
+                  alt="Hamster Hotel Logo"
+                  height="100"
+                />
+              </a>
+              <div class="navbar-nav d-flex gap-3">
+                <a class="nav-link" href="#">Amenities</a>
+                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link active" href="#">Reserve</a>
+              </div>
+            </div>
+          </div>
         </div>
-        <a class="navbar-brand mx-4" href="#">
-          <img src="/assets/Logo.png" alt="Hamster Hotel Logo" height="100" />
-        </a>
-        <div class="navbar-nav d-flex gap-3">
-          <a class="nav-link" href="#">Amenities</a>
-          <a class="nav-link" href="#">Contact</a>
-          <a class="nav-link active" href="#">Reserve</a>
+      </nav>
+    </nav>
+
+    <!--Container for the Pool Header  -->
+    <div
+      class="image-container"
+      style="position: relative; max-width: 1920px; height: 500px"
+    >
+      <img
+        src="/assets/header.jpg"
+        alt="Fancy Pool from the Hotel"
+        style="width: 100%; height: 100%; object-fit: cover"
+      />
+
+      <!-- Container for the Text Box and Text that goes across the Pool Picture -->
+      <div
+        class="overlay-text"
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 945px;
+          height: 232px;
+          background: #000324 no-repeat padding-box;
+          opacity: 0.8;
+          color: #e5feff;
+          font-weight: bold;
+          font-family: 'Dosis', sans-serif;
+          font-size: 45px;
+          line-height: 57px;
+          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 20px;
+        "
+      >
+        Run on the wheel of luxury
+        <div
+          style="
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            line-height: 20px;
+            color: #e5feff;
+            font-weight: normal;
+            margin-top: 10px;
+          "
+        >
+          Explore everything the beach has to offer in our relaxing resort.
         </div>
       </div>
     </div>
-  </div>
-</nav>
-
-    </nav>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
