@@ -31,3 +31,28 @@ body {
 .navbar-brand {
   color: #FFFFFF !important; /* white text */
 }
+.footer {
+  background-color: #000324; /* Dark background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px 40px;
+  color: #e5feff; /* Text color */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.footer-logo {
+  height: 100px;
+  width: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  margin: 0;
+}
