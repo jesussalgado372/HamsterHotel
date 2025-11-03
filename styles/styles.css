@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  background: #FFFFFF;
+  opacity: 1;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #000324 !important;
+  opacity: 1;
+}
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: #FFFFFF !important;
+  display: flex;
+  align-items: flex-end;
+}
+.d-flex.justify-content-center.align-items-end {
+  align-items: flex-end; /* Align bottom of children */
+  justify-content: center;
+  gap: 2rem; /* spacing between nav groups and logo */
+}
+
+/* Remove any 'auto' margins that push nav groups */
+.navbar-nav.d-flex {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link,
+.navbar-brand {
+  color: #FFFFFF !important; /* white text */
+}
