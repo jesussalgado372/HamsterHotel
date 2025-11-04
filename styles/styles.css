@@ -334,6 +334,81 @@ body {
   text-overflow: ellipsis;
 }
 
+.reserve-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 101px;
+}
 
+.reserve-container {
+  width: 1137px;
+  height: 207px;
+  background: #000324;
+  position: relative; /* for button absolute positioning */
+  display: flex;
+  flex-direction: column;
+  padding-left: 96px; /* space from left for inputs */
+  padding-top: 23.5px;
+  color: #fff;
+}
 
+.section-title {
+  font: normal normal bold 35px/44px "Dosis", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
+/* Form container as flex row for inputs */
+.reserve-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px; /* space between inputs */
+}
+
+/* Form groups (label + input stacked vertically) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.form-label {
+  width: 177px;
+  text-align: left;
+  font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
+  color: #E5FEFF;
+  margin-bottom: 5px;
+}
+
+/* Inputs */
+.form-control {
+  width: 177px;
+  height: 38px;
+  border: none;
+  padding: 5px 10px;
+  font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
+  color: #1A1B26;
+}
+
+/* Button aligned with inputs */
+.custom-btn {
+  position: relative; /* inline with inputs */
+  top: 22px; /* push down to align with input fields vertically */
+  width: 177px;
+  height: 38px;
+  background: #004CC7;
+  font: normal normal bold 20px/25px "Source Sans Pro", sans-serif;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+/* Reserve image below form */
+.reserve-image {
+  width: 100%;
+  max-width: 1137px;
+  height: auto;
+  display: block;
+  margin-bottom: 101px;
+}

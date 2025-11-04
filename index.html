@@ -309,37 +309,80 @@
     </div>
 
     <!-- Container for Amenities -->
-<div class="amenities-section">
-  <div class="background-image"></div> <!-- background div -->
+    <div class="amenities-section">
+      <div class="background-image"></div>
+      <!-- background div -->
 
-  <div class="amenities-content">
-    <h5 class="amenities-title">Amenities</h5>
-    <p class="amenities-description">
-      Here at La Petite Maison, we invite you to enjoy our services in hopes
-      that you have the most relaxing stay we can provide.
-    </p>
+      <div class="amenities-content">
+        <h5 class="amenities-title">Amenities</h5>
+        <p class="amenities-description">
+          Here at La Petite Maison, we invite you to enjoy our services in hopes
+          that you have the most relaxing stay we can provide.
+        </p>
 
-    <div class="amenities-icons">
-      <div class="col">
-        <img src="/assets/24hour.png" alt="24 Hour Room Service" />
-        <h6>24 Hour Room Service</h6>
-      </div>
-      <div class="col">
-        <img src="/assets/breakfast.png" alt="Complimentary Breakfast" />
-        <h6>Complimentary breakfast</h6>
-      </div>
-      <div class="col">
-        <img src="/assets/valet.png" alt="Valet Parking" />
-        <h6>Valet Parking</h6>
-      </div>
-      <div class="col">
-        <img src="/assets/pool.png" alt="Beachside Pool" />
-        <h6>Beachside Pool</h6>
+        <div class="amenities-icons">
+          <div class="col">
+            <img src="/assets/24hour.png" alt="24 Hour Room Service" />
+            <h6>24 Hour Room Service</h6>
+          </div>
+          <div class="col">
+            <img src="/assets/breakfast.png" alt="Complimentary Breakfast" />
+            <h6>Complimentary breakfast</h6>
+          </div>
+          <div class="col">
+            <img src="/assets/valet.png" alt="Valet Parking" />
+            <h6>Valet Parking</h6>
+          </div>
+          <div class="col">
+            <img src="/assets/pool.png" alt="Beachside Pool" />
+            <h6>Beachside Pool</h6>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+    <div class="reserve-section">
+      <div class="reserve-container">
+        <h2 class="section-title">Reserve a Room</h2>
+
+        <form class="reserve-form">
+          <!-- Check-in -->
+          <div class="form-group">
+            <label class="form-label" for="checkin">Check-in</label>
+            <input type="date" class="form-control" id="checkin" />
+          </div>
+
+          <!-- Check-out -->
+          <div class="form-group">
+            <label class="form-label" for="checkout">Check-out</label>
+            <input type="date" class="form-control" id="checkout" />
+          </div>
+
+          <!-- Guests -->
+          <div class="form-group">
+            <label class="form-label" for="guests">Guests</label>
+            <input type="number" class="form-control" id="guests" />
+          </div>
+
+          <!-- Room Type -->
+          <div class="form-group">
+            <label class="form-label" for="roomtype">Room Type</label>
+            <input type="text" class="form-control" id="roomtype" />
+          </div>
+
+          <!-- Button -->
+          <button type="submit" class="btn custom-btn">
+            Check Availability
+          </button>
+        </form>
+      </div>
+
+      <img
+        src="/assets/hamsterreserve.jpg"
+        alt="Cute hamster in a food bowl surrounded by assorted nuts"
+        class="reserve-image"
+      />
+    </div>
 
     <!-- Footer with Logo and text  -->
     <footer class="footer">
