@@ -364,12 +364,14 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 15px; /* space between inputs */
+  
 }
 
 /* Form groups (label + input stacked vertically) */
 .form-group {
   display: flex;
   flex-direction: column;
+  
 }
 
 /* Labels */
@@ -386,9 +388,11 @@ body {
   width: 177px;
   height: 38px;
   border: none;
-  padding: 5px 10px;
+  padding: 15px;
   font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
   color: #1A1B26;
+  border-radius: 0;
+  
 }
 
 /* Button aligned with inputs */
@@ -399,9 +403,12 @@ body {
   height: 38px;
   background: #004CC7;
   font: normal normal bold 20px/25px "Source Sans Pro", sans-serif;
+  font-size: 16px;
   color: #FFFFFF;
   border: none;
+  border-radius: 0;
   cursor: pointer;
+  word-wrap: nowrap;
 }
 
 /* Reserve image below form */
