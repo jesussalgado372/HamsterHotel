@@ -56,3 +56,132 @@ body {
 .footer-text {
   margin: 0;
 }
+/* Background section */
+.background-section {
+  background-image: url('/assets/bg2.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 1920px;
+  height: 738px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Wrapper for title + cards */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section title styling */
+.section-title {
+  text-align: center;
+  font: normal normal normal 35px/44px "Dosis", sans-serif;
+  color: #FFFFFF;
+  opacity: 1;
+  margin-bottom: 29px;
+  white-space: nowrap;
+}
+
+/* Flex row for cards */
+.card-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+/* Card base styling */
+.custom-card {
+  width: 369px;
+  height: 522px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Card image */
+.custom-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Card title styling */
+.custom-card .card-title {
+  height: 25px;
+  text-align: left;
+  font: normal normal normal 25px/32px "Dosis", sans-serif;
+  letter-spacing: 0px;
+  color: #1A1B26;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+/* Card paragraph styling */
+.custom-card .card-text {
+  height: 16px;
+  text-align: left;
+  font: normal normal bold 16px/20px "Source Sans Pro", sans-serif;
+  letter-spacing: 0px;
+  color: #1A1B26;
+  opacity: 1;
+  margin-bottom: 10px;
+}
+
+/* Card UL styling */
+.custom-card ul {
+  height: 157px;
+  text-align: left;
+  font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
+  letter-spacing: 0px;
+  color: #1A1B26;
+  opacity: 1;
+  margin-bottom: 15px;
+  padding-left: 20px; /* standard for list indentation */
+}
+
+/* Button styling (optional Bootstrap override) */
+.custom-card .btn-primary {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+/* Ensure card-body fills the card */
+.custom-card {
+  width: 369px;
+  height: 522px;
+  position: relative; /* needed for absolute button positioning */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Button inside card */
+.custom-btn {
+  background: #004CC7 0% 0% no-repeat padding-box;
+  height: 50px;
+  width: auto; /* fits text, can adjust if needed */
+  opacity: 1;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+
+  position: absolute; /* pin inside card */
+  bottom: 19px;      /* distance from bottom of card */
+  left: 25px;        /* distance from left of card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;   /* horizontal padding inside button */
+  font: normal normal bold 20px/25px "Source Sans Pro", sans-serif;
+  color: #FFFFFF;
+  text-align: left;
+  letter-spacing: 0px;
+}
+
+
