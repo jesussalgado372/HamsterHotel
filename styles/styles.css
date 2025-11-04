@@ -183,5 +183,62 @@ body {
   text-align: left;
   letter-spacing: 0px;
 }
+/* Packages section spacing */
+.packages-section {
+  margin-top: 124px; /* space below the previous section */
+}
+
+/* H2 spacing above first row */
+.packages-section .section-title {
+  font: normal normal normal 35px/44px "Dosis", sans-serif;
+  color: #1A1B26;
+  text-align: center;
+  margin-bottom: 19.5px; /* space above first row */
+}
+
+/* Package images */
+.package-img {
+  width: 561px;
+  height: 234px;
+  object-fit: cover; /* maintain aspect ratio, crop if necessary */
+}
+
+/* H5 package titles */
+.package-title {
+  width: 294px;
+  height: 32px;
+  text-align: left;
+  font: normal normal normal 25px/32px "Dosis", sans-serif;
+  letter-spacing: 0px;
+  color: #1A1B26;
+  opacity: 1;
+  white-space: nowrap;
+
+}
+
+/* Optional spacing for rows */
+.packages-section .row {
+  margin-bottom: 30px;
+}
+
+/* H2 section title */
+.packages-section .section-title {
+  font: normal normal normal 35px/44px "Dosis", sans-serif;
+  color: #1A1B26;
+  text-align: center;
+  margin-bottom: 40px;
+}
+/* H6 section */
+.packages-section h6 {
+  width: 142px;
+  height: 20px;
+  text-align: left;
+  font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
+  letter-spacing: 0px;
+  color: #1F51A8;
+  opacity: 1;
+  margin: 0 0 8px 0; /* optional spacing below h6 */
+  white-space: nowrap; /* optional: prevent wrapping if needed */
+}
 
 
