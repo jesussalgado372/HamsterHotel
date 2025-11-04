@@ -59,6 +59,7 @@ body {
 /* Background section */
 .background-section {
   background-image: url('/assets/bg2.jpg');
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 1920px;
@@ -240,5 +241,99 @@ body {
   margin: 0 0 8px 0; /* optional spacing below h6 */
   white-space: nowrap; /* optional: prevent wrapping if needed */
 }
+.amenities-section {
+  position: relative;
+  width: 100%;
+  height: 548px;
+  overflow: hidden;
+}
+
+/* Background image */
+.amenities-section .background-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1922px;
+  height: 548px;
+  background-image: url('/assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Content overlay */
+.amenities-section .amenities-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  text-align: center;
+  color: #fff; /* adjust text color as needed */
+}
+
+/* Header */
+.amenities-title {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  font: normal normal bold 35px/44px "Dosis", sans-serif;
+  color: #fff;
+  white-space: nowrap; /* prevents word wrap */
+}
+
+/* Paragraph */
+.amenities-description {
+  position: absolute;
+  top: 106px;
+  left: 50%;
+  transform: translateX(-50%);
+  font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
+  color: #fff;
+  white-space: nowrap; /* prevents word wrap */
+  overflow: hidden; /* hides overflow if text too long */
+  text-overflow: ellipsis; /* adds ... if text is too long */
+}
+
+/* Icons container */
+.amenities-icons {
+  position: absolute;
+  bottom: 169px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+/* Each icon + h6 */
+.amenities-icons .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amenities-icons img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 29px;
+}
+
+.amenities-icons h6 {
+  font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
+  color: #fff;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap; /* prevents word wrap */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
 
 
