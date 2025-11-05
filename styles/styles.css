@@ -99,9 +99,16 @@ body {
 .custom-card {
   width: 369px;
   height: 522px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
+}
+.custom-card .card-body {
+  position: static; /* reset to default to avoid being the positioning parent */
+  flex: 1;
+  padding-bottom: 80px; /* make space so text doesn’t overlap button */
 }
 
 /* Card image */
@@ -159,30 +166,27 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
 }
 
 /* Button inside card */
-.custom-btn {
-  background: #004CC7 0% 0% no-repeat padding-box;
-  height: 50px;
-  width: auto; /* fits text, can adjust if needed */
-  opacity: 1;
+.custom-card .custom-btn {
+  position: absolute;
+  top: 453px;
+  bottom: 15px;
+  left: 25px;
+
+  background: #004CC7;
+  color: #fff;
   border: none;
   border-radius: 4px;
-  text-decoration: none;
+  height: 50px;
+  padding: 0 20px;
+  font: normal normal bold 20px/25px "Source Sans Pro", sans-serif;
   cursor: pointer;
-
-  position: absolute; /* pin inside card */
-  bottom: 19px;      /* distance from bottom of card */
-  left: 25px;        /* distance from left of card */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;   /* horizontal padding inside button */
-  font: normal normal bold 20px/25px "Source Sans Pro", sans-serif;
-  color: #FFFFFF;
-  text-align: left;
-  letter-spacing: 0px;
 }
 /* Packages section spacing */
 .packages-section {
@@ -398,7 +402,7 @@ body {
 /* Button aligned with inputs */
 .custom-btn {
   position: relative; /* inline with inputs */
-  top: 22px; /* push down to align with input fields vertically */
+  top: 24px; /* push down to align with input fields vertically */
   width: 177px;
   height: 38px;
   background: #004CC7;
