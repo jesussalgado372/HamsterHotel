@@ -1,3 +1,11 @@
+/* ===================================================
+   HamsterHotel stylesheet
+   Organized by page sections for easier maintenance
+   Order: navbar, pool header, overview, our rooms,
+   packages, amenities, reserve form, footer
+   =================================================== */
+
+/* ---------- Global / Base ---------- */
 body {
   margin: 0;
   background: #FFFFFF;
@@ -5,6 +13,12 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- NAVBAR ---------- */
 .navbar {
   position: fixed;
   top: 0px;
@@ -15,12 +29,14 @@ body {
   opacity: 1;
   z-index: 1000;
 }
+
 .navbar .nav-link,
 .navbar .navbar-brand {
   color: #FFFFFF !important;
   display: flex;
   align-items: flex-end;
 }
+
 .d-flex.justify-content-center.align-items-end {
   align-items: flex-end; /* Align bottom of children */
   justify-content: center;
@@ -48,6 +64,7 @@ body {
   padding: 0;
   z-index: 2;
 }
+
 .navbar .navbar-brand img {
   width: 143px;
   height: 100px;
@@ -62,10 +79,10 @@ body {
   gap: 33px !important;
 }
 .navbar .navbar-nav.d-flex:first-of-type {
-  left: 533px; /* 573px - 40px */
+  left: 533px; /* left aligned group */
 }
 .navbar .navbar-nav.d-flex:last-of-type {
-  left: 1100px; 
+  left: 1100px; /* right aligned group */
 }
 
 /* Overview link specific style */
@@ -97,32 +114,8 @@ body {
 .navbar-brand {
   color: #FFFFFF !important; /* white text */
 }
-.footer {
-  background-color: #000324; /* Dark background */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 20px 40px;
-  color: #e5feff; /* Text color */
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1rem;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
-}
 
-.footer-logo {
-  height: 100px;
-  width: auto;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-text {
-  margin: 0;
-}
-/* Background section */
+/* ---------- POOL HEADER (hero / background) ---------- */
 .background-section {
   background-image: url('/assets/bg2.jpg');
   background-repeat: no-repeat;
@@ -136,14 +129,16 @@ body {
   color: #ffffff;
 }
 
-/* Wrapper for title + cards */
+/* ---------- OVERVIEW ---------- */
+/* Wrapper for overview title + optional cards */
 .content-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Section title styling */
+/* Generic section title used across many sections.
+   Override the color locally when needed (e.g. packages). */
 .section-title {
   text-align: center;
   font: normal normal normal 35px/44px "Dosis", sans-serif;
@@ -153,7 +148,7 @@ body {
   white-space: nowrap;
 }
 
-/* Flex row for cards */
+/* ---------- OUR ROOMS (cards) ---------- */
 .card-row {
   display: flex;
   justify-content: center;
@@ -165,7 +160,7 @@ body {
 .custom-card {
   width: 369px;
   height: 522px;
-  position: relative;
+  position: relative; /* needed for absolute button positioning */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -218,23 +213,6 @@ body {
   padding-left: 20px; /* standard for list indentation */
 }
 
-/* Button styling (optional Bootstrap override) */
-.custom-card .btn-primary {
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-}
-/* Ensure card-body fills the card */
-.custom-card {
-  width: 369px;
-  height: 522px;
-  position: relative; /* needed for absolute button positioning */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  overflow: hidden;
-}
-
 /* Button inside card */
 .custom-card .custom-btn {
   position: absolute;
@@ -254,27 +232,33 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* Packages section spacing */
+
+/* Optional Bootstrap override for card buttons */
+.custom-card .btn-primary {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ---------- PACKAGES ---------- */
 .packages-section {
   margin-top: 124px; /* space below the previous section */
 }
 
-/* H2 spacing above first row */
+/* Override title color for packages to match design */
 .packages-section .section-title {
   font: normal normal normal 35px/44px "Dosis", sans-serif;
   color: #1A1B26;
   text-align: center;
-  margin-bottom: 19.5px; /* space above first row */
+  margin-bottom: 40px;
 }
 
-/* Package images */
 .package-img {
   width: 561px;
   height: 234px;
   object-fit: cover; /* maintain aspect ratio, crop if necessary */
 }
 
-/* H5 package titles */
 .package-title {
   width: 294px;
   height: 32px;
@@ -284,22 +268,12 @@ body {
   color: #1A1B26;
   opacity: 1;
   white-space: nowrap;
-
 }
 
-/* Optional spacing for rows */
 .packages-section .row {
   margin-bottom: 30px;
 }
 
-/* H2 section title */
-.packages-section .section-title {
-  font: normal normal normal 35px/44px "Dosis", sans-serif;
-  color: #1A1B26;
-  text-align: center;
-  margin-bottom: 40px;
-}
-/* H6 section */
 .packages-section h6 {
   width: 142px;
   height: 20px;
@@ -311,6 +285,8 @@ body {
   margin: 0 0 8px 0; /* optional spacing below h6 */
   white-space: nowrap; /* optional: prevent wrapping if needed */
 }
+
+/* ---------- AMENITIES ---------- */
 .amenities-section {
   position: relative;
   width: 100%;
@@ -318,7 +294,6 @@ body {
   overflow: hidden;
 }
 
-/* Background image */
 .amenities-section .background-image {
   position: absolute;
   top: 0;
@@ -334,7 +309,6 @@ body {
   z-index: 1;
 }
 
-/* Content overlay */
 .amenities-section .amenities-content {
   position: absolute;
   top: 0;
@@ -343,10 +317,9 @@ body {
   height: 100%;
   z-index: 2;
   text-align: center;
-  color: #fff; /* adjust text color as needed */
+  color: #fff; /* overlay content color */
 }
 
-/* Header */
 .amenities-title {
   position: absolute;
   top: 45px;
@@ -357,7 +330,6 @@ body {
   white-space: nowrap; /* prevents word wrap */
 }
 
-/* Paragraph */
 .amenities-description {
   position: absolute;
   top: 106px;
@@ -370,7 +342,6 @@ body {
   text-overflow: ellipsis; /* adds ... if text is too long */
 }
 
-/* Icons container */
 .amenities-icons {
   position: absolute;
   bottom: 169px;
@@ -381,7 +352,6 @@ body {
   gap: 80px;
 }
 
-/* Each icon + h6 */
 .amenities-icons .col {
   display: flex;
   flex-direction: column;
@@ -404,6 +374,7 @@ body {
   text-overflow: ellipsis;
 }
 
+/* ---------- RESERVE FORM ---------- */
 .reserve-section {
   display: flex;
   flex-direction: column;
@@ -429,22 +400,17 @@ body {
   margin-bottom: 20px;
 }
 
-/* Form container as flex row for inputs */
 .reserve-form {
   display: flex;
   align-items: flex-start;
   gap: 15px; /* space between inputs */
-  
 }
 
-/* Form groups (label + input stacked vertically) */
 .form-group {
   display: flex;
   flex-direction: column;
-  
 }
 
-/* Labels */
 .form-label {
   width: 177px;
   text-align: left;
@@ -453,7 +419,6 @@ body {
   margin-bottom: 5px;
 }
 
-/* Inputs */
 .form-control {
   width: 177px;
   height: 38px;
@@ -462,10 +427,8 @@ body {
   font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
   color: #1A1B26;
   border-radius: 0;
-  
 }
 
-/* Button aligned with inputs */
 .custom-btn {
   position: relative; /* inline with inputs */
   top: 24px; /* push down to align with input fields vertically */
@@ -481,7 +444,6 @@ body {
   word-wrap: nowrap;
 }
 
-/* Reserve image below form */
 .reserve-image {
   width: 100%;
   max-width: 1137px;
@@ -489,3 +451,26 @@ body {
   display: block;
   margin-bottom: 101px;
 }
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background-color: #000324; /* Dark background */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px 40px;
+  color: #e5feff; /* Text color */
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.footer-logo {
+  height: 100px;
+  width: auto;
+}
+
+.footer-text {
+  margin: 0;
+}
+
