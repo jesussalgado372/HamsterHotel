@@ -6,8 +6,14 @@ body {
 }
 
 .navbar {
-  background-color: #000324 !important;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 1920px;
+  height: 120px;
+  background: #000324 0% 0% no-repeat padding-box !important;
   opacity: 1;
+  z-index: 1000;
 }
 .navbar .nav-link,
 .navbar .navbar-brand {
@@ -25,6 +31,66 @@ body {
 .navbar-nav.d-flex {
   margin: 0;
   padding: 0;
+}
+
+/* Custom Navbar Logo Positioning */
+.navbar .navbar-brand {
+  position: absolute;
+  top: 9px;
+  left: 889px;
+  width: 143px;
+  height: 100px;
+  background: transparent url('/assets/Logo.png') 0% 0% no-repeat padding-box;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 2;
+}
+.navbar .navbar-brand img {
+  width: 143px;
+  height: 100px;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Custom Nav Link Positioning */
+.navbar .navbar-nav.d-flex {
+  position: absolute;
+  top: 83px;
+  gap: 33px !important;
+}
+.navbar .navbar-nav.d-flex:first-of-type {
+  left: 533px; /* 573px - 40px */
+}
+.navbar .navbar-nav.d-flex:last-of-type {
+  left: 1100px; 
+}
+
+/* Overview link specific style */
+.navbar .navbar-nav.d-flex:first-of-type .nav-link:first-child {
+  width: 70px;
+  height: 26px;
+  text-align: left;
+  font: normal normal normal 20px/26px Dosis, Arial, sans-serif;
+  letter-spacing: 0px;
+  color: #FFFFFF !important;
+  opacity: 1;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+/* Other nav links spacing and style */
+.navbar .navbar-nav.d-flex .nav-link {
+  font: normal normal normal 20px/26px Dosis, Arial, sans-serif;
+  color: #FFFFFF !important;
+  opacity: 1;
+  margin: 0;
+  padding: 0 8px;
+  height: 26px;
+  display: inline-block;
 }
 
 .nav-link,
