@@ -14,4 +14,4 @@
 
 // You can add multiple dates with description.
 
-// Person who Peer Reviewed your assignment
+// Peer Review: Xavier-I like how everything looks my favorite is how you did the text box for check-in, out, the one thing I would say to the one I think that was off is the font size as the pro-type had a Dosis,regular font but I fell like that a simple fix but that it but I think nothing else and that pretty much it for my review on your hamster hotel.
