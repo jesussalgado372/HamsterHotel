@@ -203,7 +203,7 @@ body {
   max-width: 369px;
   height: auto; /* auto to scale content */
   background: #fff;
-  border-radius: 8px;
+  border-radius: 0px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   box-sizing: border-box;
