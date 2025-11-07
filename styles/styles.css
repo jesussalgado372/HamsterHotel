@@ -1,262 +1,321 @@
-/* ===================================================
+/* 
    HamsterHotel stylesheet
    Organized by page sections for easier maintenance
    Order: navbar, pool header, overview, our rooms,
    packages, amenities, reserve form, footer
-   =================================================== */
+ */
 
 /* ---------- Global / Base ---------- */
 body {
   margin: 0;
-  background: #FFFFFF;
-  opacity: 1;
+  background: #ffffff;
   min-height: 100vh;
 }
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ---------- NAVBAR ---------- */
+/*---------- NavBar Set Up ----------  */
 .navbar {
   position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 1920px;
-  height: 120px;
-  background: #000324 0% 0% no-repeat padding-box !important;
-  opacity: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000324;
+  padding: 0.5rem 1rem;
   z-index: 1000;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  color: #FFFFFF !important;
-  display: flex;
-  align-items: flex-end;
+  color: #ffffff !important;
+  font: normal normal normal 20px/26px Dosis, Arial, sans-serif;
 }
 
-.d-flex.justify-content-center.align-items-end {
-  align-items: flex-end; /* Align bottom of children */
-  justify-content: center;
-  gap: 2rem; /* spacing between nav groups and logo */
-}
-
-/* Remove any 'auto' margins that push nav groups */
-.navbar-nav.d-flex {
-  margin: 0;
-  padding: 0;
-}
-
-/* Custom Navbar Logo Positioning */
-.navbar .navbar-brand {
-  position: absolute;
-  top: 9px;
-  left: 889px;
-  width: 143px;
-  height: 100px;
-  background: transparent url('/assets/Logo.png') 0% 0% no-repeat padding-box;
-  opacity: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  z-index: 2;
-}
-
-.navbar .navbar-brand img {
-  width: 143px;
-  height: 100px;
+.navbar-brand img {
+  height: 75px;
   object-fit: contain;
-  background: transparent;
 }
 
-/* Custom Nav Link Positioning */
-.navbar .navbar-nav.d-flex {
+.navbar-toggler {
+  border: 2px solid #ffffff; /* makes the outline visible */
+  border-radius: 5px;        /* optional, nice rounded corners */
+  background-color: rgba(255, 255, 255, 0.1); /* subtle contrast */
+}
+
+.navbar-toggler-icon {
+  background-image: url(/assets/Logo.png);
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+  .navbar-brand {
+    display: none;
+  }
+
+  .collapse.navbar-collapse {
+    background-color: #000324;
+    padding: 1rem 0;
+  }
+
+  .navbar-nav.flex-column a.nav-link {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    display: block;
+  }
+}
+
+/* -----------Pool Header------------- */
+/* Container */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: clamp(350px, 40vw, 738px); /* fluid height: min 350px, max 738px */
+  overflow: hidden;
+}
+
+/* Hero Image */
+.pool-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay Text */
+.overlay-text {
   position: absolute;
-  top: 83px;
-  gap: 33px !important;
-}
-.navbar .navbar-nav.d-flex:first-of-type {
-  left: 533px; /* left aligned group */
-}
-.navbar .navbar-nav.d-flex:last-of-type {
-  left: 1100px; /* right aligned group */
-}
-
-/* Overview link specific style */
-.navbar .navbar-nav.d-flex:first-of-type .nav-link:first-child {
-  width: 70px;
-  height: 26px;
-  text-align: left;
-  font: normal normal normal 20px/26px Dosis, Arial, sans-serif;
-  letter-spacing: 0px;
-  color: #FFFFFF !important;
-  opacity: 1;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-}
-
-/* Other nav links spacing and style */
-.navbar .navbar-nav.d-flex .nav-link {
-  font: normal normal normal 20px/26px Dosis, Arial, sans-serif;
-  color: #FFFFFF !important;
-  opacity: 1;
-  margin: 0;
-  padding: 0 8px;
-  height: 26px;
-  display: inline-block;
-}
-
-.nav-link,
-.navbar-brand {
-  color: #FFFFFF !important; /* white text */
-}
-
-/* ---------- POOL HEADER (hero / background) ---------- */
-.background-section {
-  background-image: url('/assets/bg2.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 1920px;
-  height: 738px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(280px, 50%, 945px); /* scales with screen size */
+  padding: clamp(15px, 2vw, 25px);
+  background: rgba(0, 3, 36, 0.8); /* semi-transparent dark background */
+  color: #e5feff;
+  font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+  font-size: clamp(28px, 4vw, 50px); /* fluid font size */
+  line-height: clamp(36px, 5vw, 62px);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Overlay Subtext */
+.overlay-subtext {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: clamp(18px, 2vw, 22px);
+  font-weight: normal;
+  margin-top: 10px;
 }
 
 /* ---------- OVERVIEW ---------- */
-/* Wrapper for overview title + optional cards */
-.content-wrapper {
+/* Awards images scaling */
+.award-img {
+  max-height: 175px; /* desktop max height */
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Adjust max-height per screen size */
+@media (max-width: 991.98px) {
+  .award-img {
+    max-height: 120px; /* smaller images on mobile */
+  }
+}
+
+@media (max-width: 575.98px) {
+  .award-img {
+    max-height: 100px; /* even smaller on very small screens */
+  }
+}
+/* Default for mobile and tablet (width <= 992px) */
+.hamster-img {
+  width: 100%;
+  max-height: 416px;
+  object-fit: cover;
+}
+
+/* Desktop: width > 992px, increase height */
+@media (min-width: 992px) {
+  .hamster-img {
+    max-height: 550px; /* taller on desktop */
+  }
+}
+
+/* ---------- OUR ROOMS ---------- */
+/* ---------- BACKGROUND SECTION ---------- */
+.background-section {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  aspect-ratio: 1920 / 738;
+  margin: 0 auto;
+  background-image: url('/assets/bg2.jpg');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
+  padding: 0;
 }
 
-/* Generic section title used across many sections.
-   Override the color locally when needed (e.g. packages). */
-.section-title {
+/* ---------- SECTION TITLE ---------- */
+.section-rooms-title {
+  position: absolute;
+  top: 30px; /* 30px from top of background container */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 146px;
+  height: 44px;
   text-align: center;
   font: normal normal normal 35px/44px "Dosis", sans-serif;
   color: #FFFFFF;
   opacity: 1;
-  margin-bottom: 29px;
-  white-space: nowrap;
+  white-space: nowrap; /* prevent wrapping */
+  margin: 0;
 }
 
-/* ---------- OUR ROOMS (cards) ---------- */
+/* ---------- CARDS CONTAINER ---------- */
 .card-row {
+  width: 100%;
+  max-width: 1142px; /* Figma container width */
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
+  gap: 10px; /* spacing between cards */
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-top: 74px; /* 30px from title + title height 44px = 74px */
+  padding: 0 10px;
 }
 
-/* Card base styling */
+/* ---------- CARDS ---------- */
 .custom-card {
-  width: 369px;
-  height: 522px;
-  position: relative; /* needed for absolute button positioning */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between; /* button stays at bottom */
+  flex: 1 1 369px; /* base width */
+  max-width: 369px;
+  height: auto; /* auto to scale content */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
-}
-.custom-card .card-body {
-  position: static; /* reset to default to avoid being the positioning parent */
-  flex: 1;
-  padding-bottom: 80px; /* make space so text doesn’t overlap button */
+  box-sizing: border-box;
 }
 
 /* Card image */
 .custom-card img {
   width: 100%;
-  height: 250px;
+  height: auto; /* scales naturally */
+  max-height: 250px; /* optional desktop limit */
   object-fit: cover;
 }
 
-/* Card title styling */
+/* Card body */
+.custom-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 15px;
+}
+
+/* Card title */
 .custom-card .card-title {
-  height: 25px;
-  text-align: left;
-  font: normal normal normal 25px/32px "Dosis", sans-serif;
-  letter-spacing: 0px;
-  color: #1A1B26;
-  opacity: 1;
+  font-family: "Dosis", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-/* Card paragraph styling */
+/* Card text */
 .custom-card .card-text {
-  height: 16px;
-  text-align: left;
-  font: normal normal bold 16px/20px "Source Sans Pro", sans-serif;
-  letter-spacing: 0px;
-  color: #1A1B26;
-  opacity: 1;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
   margin-bottom: 10px;
 }
 
-/* Card UL styling */
+/* Card list */
 .custom-card ul {
-  height: 157px;
-  text-align: left;
-  font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
-  letter-spacing: 0px;
-  color: #1A1B26;
-  opacity: 1;
-  margin-bottom: 15px;
-  padding-left: 20px; /* standard for list indentation */
+  padding-left: 20px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 0.9rem;
 }
 
-/* Button inside card */
+/* Card button */
 .custom-card .custom-btn {
-  position: absolute;
-  top: 453px;
-  bottom: 15px;
-  left: 25px;
-
+  align-self: flex-start; /* left aligned */
+  margin-top: auto;
+  margin-bottom: 20px;   /* push to bottom */
   background: #004CC7;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 0px;
   height: 50px;
-  padding: 0 20px;
-  font: normal normal bold 20px/25px "Source Sans Pro", sans-serif;
+  font: bold 20px "Source Sans Pro", sans-serif;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Optional Bootstrap override for card buttons */
-.custom-card .btn-primary {
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: bold;
-  font-size: 16px;
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1440px) {
+  .custom-card {
+    flex: 1 1 300px;
+    max-width: 300px;
+  }
+  .custom-card img {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .custom-card {
+    flex: 1 1 240px;
+    max-width: 240px;
+  }
+  .custom-card img {
+    max-height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-row {
+    gap: 10px;
+  }
+  .custom-card {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+  .custom-card img {
+    max-height: 180px;
+  }
 }
 
 /* ---------- PACKAGES ---------- */
+/* ---------- BASE STYLES (DESKTOP ≥992px) ---------- */
 .packages-section {
-  margin-top: 124px; /* space below the previous section */
+  margin-top: 124px;
+  margin-bottom: 95px;
 }
 
-/* Override title color for packages to match design */
-.packages-section .section-title {
-  font: normal normal normal 35px/44px "Dosis", sans-serif;
-  color: #1A1B26;
-  text-align: center;
-  margin-bottom: 40px;
+.packages-section .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .package-img {
   width: 561px;
   height: 234px;
-  object-fit: cover; /* maintain aspect ratio, crop if necessary */
+  object-fit: cover;
 }
 
 .package-title {
@@ -264,117 +323,132 @@ body {
   height: 32px;
   text-align: left;
   font: normal normal normal 25px/32px "Dosis", sans-serif;
-  letter-spacing: 0px;
   color: #1A1B26;
-  opacity: 1;
   white-space: nowrap;
 }
 
-.packages-section .row {
-  margin-bottom: 30px;
-}
-
 .packages-section h6 {
-  width: 142px;
-  height: 20px;
-  text-align: left;
   font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
-  letter-spacing: 0px;
   color: #1F51A8;
-  opacity: 1;
-  margin: 0 0 8px 0; /* optional spacing below h6 */
-  white-space: nowrap; /* optional: prevent wrapping if needed */
+  margin: 0 0 8px 0;
+  white-space: nowrap;
 }
 
-/* ---------- AMENITIES ---------- */
+.packages-section p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #1A1B26;
+}
+
+/* ---------- MOBILE & TABLET (<992px) ---------- */
+@media (max-width: 992px) {
+  .packages-section .row {
+    flex-direction: column !important; /* stack vertically */
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Make columns full width */
+  .packages-section .col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 15px; /* spacing between stacked columns */
+  }
+
+  /* Move the image column above the text column */
+  .packages-section .row .col:nth-child(2) img.package-img {
+    /* Instead of moving the image itself, move the entire column up */
+    order: -1;
+  }
+
+  /* Optional: style adjustments */
+  .package-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .package-title, .packages-section h6, .packages-section p {
+    text-align: center !important;
+  }
+}
+
+/* ---------- Amenities Section ---------- */
 .amenities-section {
   position: relative;
   width: 100%;
-  height: 548px;
+  min-height: 548px; /* maintain desktop height */
   overflow: hidden;
 }
 
 .amenities-section .background-image {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1922px;
-  height: 548px;
   background-image: url('/assets/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: 1;
-  z-index: 1;
-}
-
-.amenities-section .amenities-content {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
+}
+
+.amenities-section .amenities-content {
+  position: relative;
   z-index: 2;
-  text-align: center;
-  color: #fff; /* overlay content color */
+  color: #fff;
+  padding-top: 120px; /* desktop default */
+  padding-bottom: 60px;
 }
 
 .amenities-title {
-  position: absolute;
-  top: 45px;
-  left: 50%;
-  transform: translateX(-50%);
   font: normal normal bold 35px/44px "Dosis", sans-serif;
-  color: #fff;
-  white-space: nowrap; /* prevents word wrap */
 }
 
 .amenities-description {
-  position: absolute;
-  top: 106px;
-  left: 50%;
-  transform: translateX(-50%);
   font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
-  color: #fff;
-  white-space: nowrap; /* prevents word wrap */
-  overflow: hidden; /* hides overflow if text too long */
-  text-overflow: ellipsis; /* adds ... if text is too long */
-}
-
-.amenities-icons {
-  position: absolute;
-  bottom: 169px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-}
-
-.amenities-icons .col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .amenities-icons img {
   width: 80px;
   height: 80px;
-  margin-bottom: 29px;
 }
 
 .amenities-icons h6 {
   font: normal normal normal 16px/20px "Source Sans Pro", sans-serif;
-  color: #fff;
   margin: 0;
-  text-align: center;
-  white-space: nowrap; /* prevents word wrap */
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 992px) {
+  .amenities-section {
+    min-height: auto; /* allow content to grow */
+  }
+
+  .amenities-section .amenities-content {
+    padding-top: 60px; /* smaller top padding for mobile */
+    padding-bottom: 40px;
+  }
+
+  .amenities-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .amenities-description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .amenities-icons img {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 /* ---------- RESERVE FORM ---------- */
+/* ---------- Desktop ≥992px ---------- */
 .reserve-section {
   display: flex;
   flex-direction: column;
@@ -385,25 +459,19 @@ body {
 .reserve-container {
   width: 1137px;
   height: 207px;
-  background: #000324;
-  position: relative; /* for button absolute positioning */
+  background: #000324; /* background for desktop */
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding-left: 96px; /* space from left for inputs */
+  padding-left: 96px;
   padding-top: 23.5px;
   color: #fff;
-}
-
-.section-title {
-  font: normal normal bold 35px/44px "Dosis", sans-serif;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .reserve-form {
   display: flex;
   align-items: flex-start;
-  gap: 15px; /* space between inputs */
+  gap: 15px;
 }
 
 .form-group {
@@ -430,8 +498,8 @@ body {
 }
 
 .custom-btn {
-  position: relative; /* inline with inputs */
-  top: 24px; /* push down to align with input fields vertically */
+  position: relative;
+  top: 24px;
   width: 177px;
   height: 38px;
   background: #004CC7;
@@ -450,6 +518,52 @@ body {
   height: auto;
   display: block;
   margin-bottom: 101px;
+}
+
+/* ---------- Mobile <992px ---------- */
+@media (max-width: 991.98px) {
+  .reserve-section {
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+
+  .reserve-container {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reserve-form {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-group .form-control {
+    width: 100%;
+  }
+
+  .custom-btn {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .reserve-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .section-title {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 }
 
 /* ---------- FOOTER ---------- */

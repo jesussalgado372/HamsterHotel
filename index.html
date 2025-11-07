@@ -14,119 +14,95 @@
   </head>
   <body>
     <!-- NavBar with Logo -->
-    <nav
-      class="navbar navbar-expand-lg bg-body-tertiary nav-pills justify-content-center"
-    >
-      <nav
-        class="navbar navbar-expand-lg bg-body-tertiary"
-        style="background-color: #000324"
-      >
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="d-flex justify-content-center align-items-end w-100">
-              <div class="navbar-nav d-flex gap-3">
-                <a class="nav-link" href="#">Overview</a>
-                <a class="nav-link" href="#">Rooms</a>
-                <a class="nav-link" href="#">Packages</a>
-              </div>
-              <a class="navbar-brand mx-4" href="#">
-                <img
-                  src="/assets/Logo.png"
-                  alt="Hamster Hotel Logo"
-                  height="100"
-                />
-              </a>
-              <div class="navbar-nav d-flex gap-3">
-                <a class="nav-link" href="#">Amenities</a>
-                <a class="nav-link" href="#">Contact</a>
-                <a class="nav-link active" href="#">Reserve</a>
-              </div>
-            </div>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <!-- Desktop navbar (desktop only) -->
+        <div
+          class="d-none d-lg-flex w-100 nav-pills justify-content-center align-items-end"
+        >
+          <!-- Left nav -->
+          <div class="left-nav d-flex gap-3">
+            <a class="nav-link" href="#overview">Overview</a>
+            <a class="nav-link" href="#rooms">Rooms</a>
+            <a class="nav-link" href="#packages">Packages</a>
+          </div>
+
+          <!-- Centered logo -->
+          <a class="navbar-brand mx-4" href="#">
+            <img src="/assets/Logo.png" alt="Hamster Hotel Logo" />
+          </a>
+
+          <!-- Right nav -->
+          <div class="right-nav d-flex gap-3">
+            <a class="nav-link" href="#amenities">Amenities</a>
+            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link active" href="#reserve">Reserve</a>
           </div>
         </div>
-      </nav>
+
+        <!-- Mobile hamburger button (mobile only) -->
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMobile"
+          aria-controls="navbarMobile"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Mobile menu (mobile only) -->
+        <div class="collapse navbar-collapse d-lg-none" id="navbarMobile">
+          <div class="navbar-nav flex-column w-100">
+            <a class="nav-link d-lg-none" href="#overview">Overview</a>
+            <a class="nav-link d-lg-none" href="#rooms">Rooms</a>
+            <a class="nav-link d-lg-none" href="#packages">Packages</a>
+            <a class="nav-link d-lg-none" href="#amenities">Amenities</a>
+            <a class="nav-link d-lg-none" href="#contact">Contact</a>
+            <a class="nav-link d-lg-none" href="#reserve">Reserve</a>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!--Container for the Pool Header  -->
-    <div
-      class="image-container"
-      style="
-        position: relative;
-        max-width: 1920px;
-        height: 500px;
-        margin-bottom: 109px;
-      "
-    >
+    <div class="image-container" id="overview" >
       <img
         src="/assets/header.jpg"
         alt="Fancy Pool from the Hotel"
-        style="width: 100%; height: 100%; object-fit: cover"
+        class="pool-image"
       />
 
-      <!-- Container for the Text Box and Text that goes across the Pool Picture -->
-      <div
-        class="overlay-text"
-        style="
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 945px;
-          height: 232px;
-          background: #000324 no-repeat padding-box;
-          opacity: 0.8;
-          color: #e5feff;
-          font-weight: bold;
-          font-family: 'Dosis', sans-serif;
-          font-size: 45px;
-          line-height: 57px;
-          text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          padding: 20px;
-        "
-      >
+      <div class="overlay-text">
         Run on the wheel of luxury
-        <div
-          style="
-            font-family: 'Source Sans Pro', sans-serif;
-            font-size: 16px;
-            line-height: 20px;
-            color: #e5feff;
-            font-weight: normal;
-            margin-top: 10px;
-          "
-        >
+        <div class="overlay-subtext">
           Explore everything the beach has to offer in our relaxing resort.
         </div>
       </div>
     </div>
 
     <!-- Container for Overview -->
-    <div class="container mt-5" style="margin-bottom: 91px">
-      <div class="row g-0 align-items-start">
-        <!-- removed align-items: flex-end -->
-        <!-- Left column: Hamster image (vertically top-aligned by default) -->
-        <div class="col-md-4 d-flex justify-content-end px-3">
+    <div class="container my-5" style="margin-bottom: 91px">
+      <div class="row g-4 align-items-start">
+        <!-- Left column: Hamster image -->
+        <div
+          class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end px-3"
+        >
           <img
             src="/assets/hamsterhomejpg.jpg"
-            alt=""
-            class="img-fluid"
-            style="max-height: 416px"
+            alt="Hamster Home"
+            class="img-fluid hamster-img"
           />
         </div>
-        <!-- Right column: Welcome text and award images stacked vertically -->
-        <div class="col-md-8">
-          <!-- Welcome Text Above -->
+
+        <!-- Right column: Welcome text and award images -->
+        <div class="col-12 col-md-8">
+          <!-- Welcome Text -->
           <div
-            class="welcome-text mb-4"
-            style="
-              color: #000324;
-              font-family: 'Source Sans Pro', 'Dosis', Arial, sans-serif;
-            "
+            class="welcome-text mb-4 text-center text-md-start"
+            style="color: #000324"
           >
             <h2
               style="
@@ -148,30 +124,36 @@
               thank you for choosing La Petite Maison.
             </p>
           </div>
-          <!-- Row for award images below the text, not bottom-aligned to left image -->
-          <div class="row">
-            <div class="col d-flex justify-content-center">
+
+          <!-- Awards Row -->
+          <div
+            class="row g-3 justify-content-center justify-content-md-start align-items-center awards-row"
+          >
+            <div
+              class="col-6 col-sm-4 col-md d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+            >
               <img
                 src="/assets/awardfinest.png"
                 alt=""
-                class="img-fluid"
-                style="max-height: 153px"
+                class="img-fluid award-img"
               />
             </div>
-            <div class="col d-flex justify-content-center">
+            <div
+              class="col-6 col-sm-4 col-md d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
+            >
               <img
                 src="/assets/awardsatisfaction.png"
                 alt=""
-                class="img-fluid"
-                style="max-height: 173px"
+                class="img-fluid award-img"
               />
             </div>
-            <div class="col d-flex justify-content-center">
+            <div
+              class="col-6 col-sm-4 col-md d-flex justify-content-center justify-content-md-start"
+            >
               <img
                 src="/assets/awardgenuine.png"
                 alt=""
-                class="img-fluid"
-                style="max-height: 175px"
+                class="img-fluid award-img"
               />
             </div>
           </div>
@@ -180,72 +162,62 @@
     </div>
 
     <!-- Container for Our Rooms  -->
-    <div class="background-section">
-      <div class="content-wrapper">
-        <h2 class="section-title">Our Rooms</h2>
-
-        <div class="card-row">
-          <div class="card custom-card">
-            <img
-              src="assets/room1.jpg"
-              class="card-img-top"
-              alt="Queen Room shows queen size bed with nice pillows"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Queen Room</h5>
-              <p class="card-text">850 SQ FT room with city view</p>
-              <ul>
-                <li>One queen size bed</li>
-                <li>Seed Bar, fireplace and large balcony</li>
-                <li>Small kitchen with a refrigerator and stove</li>
-              </ul>
-              <a href="#" class="btn custom-btn">Reserve</a>
-            </div>
+    <div class="background-section" id="rooms">
+      <!-- Section Title -->
+      <h2 class="section-rooms-title">Our Rooms</h2>
+      <!-- CARDS CONTAINER -->
+      <div class="card-row">
+        <!-- CARD 1 -->
+        <div class="card custom-card">
+          <img src="assets/room1.jpg" alt="Queen Room" />
+          <div class="card-body">
+            <h5 class="card-title">Queen Room</h5>
+            <p class="card-text">850 SQ FT room with city view</p>
+            <ul>
+              <li>One queen size bed</li>
+              <li>Seed Bar, fireplace and large balcony</li>
+              <li>Small kitchen with a refrigerator and stove</li>
+            </ul>
+            <a href="#" class="btn custom-btn">Reserve</a>
           </div>
+        </div>
 
-          <div class="card custom-card">
-            <img
-              src="assets/room3.jpg"
-              class="card-img-top"
-              alt="King Room shows king size bed with TV at the foot of the bed"
-            />
-            <div class="card-body">
-              <h5 class="card-title">King Room</h5>
-              <p class="card-text">950 SQ FT room with beach view</p>
-              <ul>
-                <li>One king size bed</li>
-                <li>Seed Bar, fireplace and large balcony</li>
-                <li>Small kitchen with a refrigerator and stove</li>
-              </ul>
-              <a href="#" class="btn custom-btn">Reserve</a>
-            </div>
+        <!-- CARD 2 -->
+        <div class="card custom-card">
+          <img src="assets/room3.jpg" alt="King Room" />
+          <div class="card-body">
+            <h5 class="card-title">King Room</h5>
+            <p class="card-text">950 SQ FT room with beach view</p>
+            <ul>
+              <li>One king size bed</li>
+              <li>Seed Bar, fireplace and large balcony</li>
+              <li>Small kitchen with a refrigerator and stove</li>
+            </ul>
+            <a href="#" class="btn custom-btn">Reserve</a>
           </div>
+        </div>
 
-          <div class="card custom-card">
-            <img
-              src="assets/room2.jpg"
-              class="card-img-top"
-              alt="Beach Side Suite showing bed, and balcony view"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Beach Side Suite</h5>
-              <p class="card-text">1500 SQ FT Suite with beach view</p>
-              <ul>
-                <li>One California king size bed</li>
-                <li>Second room with fireplace, hot tub, and balcony</li>
-                <li>Seed Bar and coffee station</li>
-                <li>Full kitchen with a refrigerator, stove and island</li>
-              </ul>
-              <a href="#" class="btn custom-btn">Reserve</a>
-            </div>
+        <!-- CARD 3 -->
+        <div class="card custom-card">
+          <img src="assets/room2.jpg" alt="Beach Side Suite" />
+          <div class="card-body">
+            <h5 class="card-title">Beach Side Suite</h5>
+            <p class="card-text">1500 SQ FT Suite with beach view</p>
+            <ul>
+              <li>One California king size bed</li>
+              <li>Second room with fireplace, hot tub, and balcony</li>
+              <li>Seed Bar and coffee station</li>
+              <li>Full kitchen with a refrigerator, stove and island</li>
+            </ul>
+            <a href="#" class="btn custom-btn">Reserve</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Container for Packages -->
-    <div class="container packages-section" style="margin-bottom: 95px">
-      <h2 class="section-title">Packages</h2>
+    <div class="container packages-section" id="packages" style="margin-bottom: 95px">
+      <h2 class="section-title-packages text-center">Packages</h2>
 
       <div class="package">
         <div class="row align-items-center mb-4">
@@ -314,32 +286,50 @@
     </div>
 
     <!-- Container for Amenities -->
-    <div class="amenities-section">
-      <div class="background-image"></div>
-      <!-- background div -->
+    <div class="amenities-section position-relative" id="amenities">
+      <!-- Background -->
+      <div class="background-image position-absolute w-100 h-100"></div>
 
-      <div class="amenities-content">
-        <h5 class="amenities-title">Amenities</h5>
-        <p class="amenities-description">
+      <!-- Content -->
+      <div class="container amenities-content text-center text-white">
+        <h5 class="amenities-title mb-3">Amenities</h5>
+        <p class="amenities-description mb-5">
           Here at La Petite Maison, we invite you to enjoy our services in hopes
           that you have the most relaxing stay we can provide.
         </p>
 
-        <div class="amenities-icons">
-          <div class="col">
-            <img src="/assets/24hour.png" alt="24 Hour Room Service" />
+        <!-- Icons -->
+        <div class="row justify-content-center g-4 amenities-icons">
+          <div class="col-6 col-md-3 text-center">
+            <img
+              src="/assets/24hour.png"
+              alt="24 Hour Room Service"
+              class="img-fluid mb-2"
+            />
             <h6>24 Hour Room Service</h6>
           </div>
-          <div class="col">
-            <img src="/assets/breakfast.png" alt="Complimentary Breakfast" />
-            <h6>Complimentary breakfast</h6>
+          <div class="col-6 col-md-3 text-center">
+            <img
+              src="/assets/breakfast.png"
+              alt="Complimentary Breakfast"
+              class="img-fluid mb-2"
+            />
+            <h6>Complimentary Breakfast</h6>
           </div>
-          <div class="col">
-            <img src="/assets/valet.png" alt="Valet Parking" />
+          <div class="col-6 col-md-3 text-center">
+            <img
+              src="/assets/valet.png"
+              alt="Valet Parking"
+              class="img-fluid mb-2"
+            />
             <h6>Valet Parking</h6>
           </div>
-          <div class="col">
-            <img src="/assets/pool.png" alt="Beachside Pool" />
+          <div class="col-6 col-md-3 text-center">
+            <img
+              src="/assets/pool.png"
+              alt="Beachside Pool"
+              class="img-fluid mb-2"
+            />
             <h6>Beachside Pool</h6>
           </div>
         </div>
@@ -347,9 +337,9 @@
     </div>
 
     <!-- Container for Reserve Form -->
-    <div class="reserve-section">
+    <div class="reserve-section" id="reserve">
       <div class="reserve-container">
-        <h2 class="section-title">Reserve a Room</h2>
+        <h2 class="section-title text-center">Reserve a Room</h2>
 
         <form class="reserve-form">
           <!-- Check-in -->
@@ -391,7 +381,7 @@
     </div>
 
     <!-- Footer with Logo and text  -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <div class="container d-flex flex-column align-items-center text-center">
         <img
           src="/assets/Logo.png"
