@@ -43,6 +43,18 @@ body {
   background-image: url(/assets/Logo.png);
 }
 
+.nav-pills .nav-link.active {
+  background-color: transparent;
+  border: 1px solid white;  /* White box outline */
+  border-radius: 0px;        /* Optional: rounded corners */
+  text-align: center;        /* Center the text inside the box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
 /* Mobile adjustments */
 @media (max-width: 992px) {
   .navbar-brand {
